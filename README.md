@@ -1,4 +1,4 @@
-# Specialized-Metabolites-in-Mimulus-Guttatus-
+# Specialized-Metabolites-in-Mimulus-guttatus-
 #readme file 
 
 
