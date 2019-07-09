@@ -38,8 +38,8 @@ Name: GetMimSeqs.py
 # Mim.UGT.v2 - Curation based on size # 
 #######################################
 
-Name: 
--Description: 
+Name: GetSize.py
+-Description: Curates the UGTs based on size. It check to see if a gene is less than 550 and more than 20 amino acids long. For these genes that fall within this threshold, it then writes the sequence to a new file, therefor cutting out genes that are too long or too short.   
 -Input: 
 -Output: 
 -comments: 
@@ -57,11 +57,22 @@ Name:
 -comments: 
 
 
-##############
-# Mim.UGT.v3 #
-##############
+########################################################
+# Mim.UGT.v3 - curation based on PSPG box completeness #
+########################################################
+Name: PSPGbox.py - uses the stokholm alignment file to look for the PSPG conserved residue and then search each gene's PSPG box for deletions, (indicated by a "-") 
 
+Name: 
+-Description: 
+-Input: 
+-Output: 
+-comments: 
 
+Name: 
+-Description: 
+-Input: 
+-Output: 
+-comments: 
 
 
 
