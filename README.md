@@ -42,8 +42,10 @@ Name: GetSize.py
 -Description: Curates the UGTs based on size. It check to see if a gene is less than 550 and more than 200 amino acids long. For these annotations that fall within this threshold, it then writes the sequence to a new file, therefor cutting out annotations 
 that are too long or too short.   
 -Input: "HMMERuniqSeqsStrp.fasta"
--Output: "sizeUniqUpdated.fasta" 
+-Output: "sizeUniqUpdated.fasta" CHANGE TO Mim.UGT.v2
 -comments: Upper bound was origanlly 500 but was then increases to 550.   
+
+
 
 
 
@@ -59,20 +61,15 @@ Name: TBD
 Name: PSPGbox.py 
 -Description: uses the stokholm alignment file to look for the PSPG conserved residue and then search each gene's PSPG box for deletions, (indicated by a "-") 
 -Input: TBD
--Output: "pspg.out"- the names of the annotations that have a full PSPG box , "fullPSPG.txt" - file containing the PSPG boxes of the annotations that have full PSPG boxes that coresspond to the names in pspg.out. 
+-Output: pspg.out- the names of the annotations that have a full PSPG box , "fullPSPG.txt" - file containing the PSPG boxes of the annotations that have full PSPG boxes that coresspond to the names in pspg.out. 
 -comments: 
 
-Name: 
+Name: GetMimSeqs
 -Description: 
--Input: 
--Output: 
+-Input: pspg.out
+-Output:  Mim.UGT.v3
 -comments: 
 
-Name: 
--Description: 
--Input: 
--Output: 
--comments: 
 
 
 
