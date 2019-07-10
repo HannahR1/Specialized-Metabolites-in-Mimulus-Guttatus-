@@ -42,7 +42,7 @@ Name: GetSize.py
 -Description: Curates the UGTs based on size. It check to see if a gene is less than 550 and more than 200 amino acids long. For these annotations that fall within this threshold, it then writes the sequence to a new file, therefor cutting out annotations 
 that are too long or too short.   
 -Input: "HMMERuniqSeqsStrp.fasta"
--Output: "sizeUniqUpdated.fasta" CHANGE TO Mim.UGT.v2
+-Output: Mim.UGT.v2
 -comments: Upper bound was origanlly 500 but was then increases to 550.   
 
 
