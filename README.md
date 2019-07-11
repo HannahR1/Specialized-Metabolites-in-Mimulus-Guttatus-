@@ -1,9 +1,10 @@
 # Specialized-Metabolites-in-Mimulus-guttatus-
 #readme file 
 
-#############################################################################
-# HMMsearch - Extract the UGTs from the Mimulus Protein Annotation Database #
-#############################################################################
+
+# HMMsearch - Extract the UGTs from the Mimulus Protein Annotation Database 
+
+
 HMMsearch.sh - extracts the mimulus genes that are UGTs 
 Input(s):
 MguttatusSeq.fasta - genome of mimulus guttatus annotated genes
@@ -35,9 +36,9 @@ Description: Removes the whitespace and formats the file that contains the all m
 Input: MguttatusSeq.fasta
 Output: MguttatusStrp.fasta
 
-####################################
-# Curation 1 - PSPG completeness   #
-####################################
+#############################################################################
+# Curation 1 - PSPG completeness                                            #
+#############################################################################
 
 Name: curatePspg.sh
 Description: curates sequences based on the PSPG conserved motif completeness
