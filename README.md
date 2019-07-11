@@ -1,92 +1,97 @@
 # Specialized-Metabolites-in-Mimulus-guttatus-
 #readme file 
 
+#############################################################################
+# HMMsearch - Extract the UGTs from the Mimulus Protein Annotation Database #
+#############################################################################
+HMMsearch.sh - extracts the mimulus genes that are UGTs 
+Input(s):
+MguttatusSeq.fasta - genome of mimulus guttatus annotated genes
+UDPGT.hmm - hmm profile of UDPGTs from pfam 
+Files: GetHmmSearchHits.py, parsePrimary.py, RemoveWhiteSpc.py, GetFullSeqs.py
 
-
-##############
-# Mim.UGT.v1 #
-##############
+Output(s): hmmsearch.out - the hmmersearch output file not formatted in the sto
+MimUGTs.sto - hmmserach output formatted into .sto file
+MimUGTIDsUniq.txt - IDs from the MimUGTIDs.txt that are unique and nonoverlapping
+MimUGTUniqFastaID.txt -  full fasta ID from the original mimulus genome annotation file
 
 Name: GetHmmSearchHits.py
--Description: Get the names of the mimulus gene hits from the hmmer search method
--Input: "HMMERPfamStock.sto" 
--Output: "HMMERPfamHits.txt"
--comments: 
+Description: get the names of the mimulus genes that was a hit 
+Input: MimUGTs.sto
+Output: MimUGTIDs.txt
 
-Name: RefineHits.sh 
--Description: 
-converts the ids to the first line of the fasta name
-removes the duplicate annotations id that coresspond to the same gene and ids that coressopnds to different annotated versions of the same gene (secondary, tertiary)
--Input: TBD
--Output: 
--comments: 
+Name: parsePrimary.py
+Description: parses through the MimUGTIDs.txt to write fasta IDs refer only to primary annotations to the output file. 
+Input(s): MimUGTFastaID.txt
+Outputs(s): MimUGTPrimary.txt
+Notes: 
 
-Name: GetMimSeqs.py
--Description: Get ull length sequences from using a list of the fata headers and the mimulus genome amino acid sequences. 
--Input: ____, ____, 
--Output: 
--comments: Used Multiple Times for each  Mim.UGT version 
+GetFullSeqs.py
+Name: GetFullSeqs.py
+Description: Writes full sequences from mimulus genome to the output file given a list of full fasta IDs 
+Input: MimUGTPrimary.txt
+Output: Mim.UGT.v1.fasta 
 
---->Name: strip.py 
--Description: Removes all the white space from MguttatusSeq.fasta so that it     can be easily used to extract sequences from. 
--Input: "MguttatusSeq.fasta"
--Output: "MGutStrp.fasta"
+Name: RemoveWhiteSpc.py
+Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
+Input: MguttatusSeq.fasta
+Output: MguttatusStrp.fasta
 
+Name: expressedAnnot.txt
+Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes. Notes: (from heatmap) 
 
+####################################
+# Curation 1 - PSPG completeness   #
+####################################
+Name: curatePspg.sh
+Description: curates sequences based on the PSPG conserved motif completeness
+Files: 
+pspgBox.py
+GetFullSeqs.py - NOTE: change the input and output:
+infile2 = PspgID.txt
+outfile2= Mim.UGT.v2.fasta
 
-#######################################
-# Mim.UGT.v2 - Curation based on size # 
-#######################################
+Name: pspgBox.py
+Description: For annotations that have a full PSPG box,  writes the IDs to a new file.
+Input: MimUGTs.sto #### NEEDS TO BE CHANGED TO THE OUTPUT FROM formatPspg.py###
+Output: PspgID.txt, "fullPSPG.txt" 
+
+Name: formatPspg.py
+Description: reformats MimUGTs.sto so that it can be parsed for PSPG box completeness. 
+Input: MimUGTs.sto
+Output: MimUGTsFmt.sto
+ 
+################################################
+# Curation 2 - sequence Size                   #
+################################################
+
+Name: CurateSize.sh         
+Description: Curates Mim.UGT.V2.fasta based on length of sequence 
+Files: strpSeqs.py, GetSize.py
+ 
+Name: strpSeqs.py
+Description: removes the white space from the sequences 
+Input:  Mim.UGT.v2.fasta
+Output: Mim.UGT.v2.Strp.fasta
 
 Name: GetSize.py
--Description: Curates the UGTs based on size. It check to see if a gene is less than 550 and more than 200 amino acids long. For these annotations that fall within this threshold, it then writes the sequence to a new file, therefor cutting out annotations 
-that are too long or too short.   
--Input: "HMMERuniqSeqsStrp.fasta"
--Output: Mim.UGT.v2
--comments: Upper bound was origanlly 500 but was then increases to 550.   
+-Description:  For annotations that fall within this threshold between 200 and 550 amino acids long, it writes the sequence to a new file. 
+-Input: Mim.UGT.v2.Strp.fasta
+-Output:  Mim.UGT.v3.fasta
+-comments: Upper bound was origanly 500 but was then increased to 550.   
 
-
-
-
-
-########################################################
-# Mim.UGT.v3 - curation based on PSPG box completeness #
-########################################################
-Name: TBD
--Description: convert sizeUniqUpdated.fasta into a stolkholm file to be used to analyze the PSPG box in these annotations. 
--Input: sizeUniqUpdated.fasta
--Output: sizeUniqUpdated.sto 
--comments: 
-
-Name: PSPGbox.py 
--Description: uses the stokholm alignment file to look for the PSPG conserved residue and then search each gene's PSPG box for deletions, (indicated by a "-") 
--Input: TBD
--Output: pspg.out- the names of the annotations that have a full PSPG box , "fullPSPG.txt" - file containing the PSPG boxes of the annotations that have full PSPG boxes that coresspond to the names in pspg.out. 
--comments: 
-
-Name: GetMimSeqs
--Description: 
--Input: pspg.out
--Output:  Mim.UGT.v3
--comments: 
-
-
-
-
-
-##############################################################################
-# Mim.UGT.v4 - curate based on annotaions that coresspond to expressed genes #
-##############################################################################
-
-Name: 
--Description: 
--Input: 
--Output: 
--comments: 
-
-Name: 
--Description: use the R file to determine if the gene is a good candidate? 
--Input: 
--Output: 
--comments: 
-
+#####################################################
+# Curation3 -  Expressed Mimulus UGTs               #
+#####################################################
+ 
+Name: curateExpressed.sh
+Description: curates Mim.UGT.v3 based on the mimulus gutattus UGTs that are expressed. 
+Input: expressedAnnot.txt
+Output: expressedAnnotuniq.txt - gets the unique fasta IDs, MimUGTExpFastaID.txt - full fasta IDs of expressed genes 
+Files: 
+parsePrimary.py - NOTE:change input and output: 
+infile2 = "MimUGTExpFastaIDuniq"
+outfile2 = "MimUGTPrimary2.txt"
+GetFullSeqs.py - NOTE: change input and output: 
+infile4 = "Mim.UGT.v3.format.fasta"
+outfile4 = "Mim.UGT.v4.fasta"
