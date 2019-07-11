@@ -38,6 +38,7 @@ Output: MguttatusStrp.fasta
 ####################################
 # Curation 1 - PSPG completeness   #
 ####################################
+
 Name: curatePspg.sh
 Description: curates sequences based on the PSPG conserved motif completeness
 Files: 
