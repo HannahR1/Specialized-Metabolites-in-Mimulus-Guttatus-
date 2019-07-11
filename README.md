@@ -13,7 +13,7 @@ Files: GetHmmSearchHits.py, parsePrimary.py, RemoveWhiteSpc.py, GetFullSeqs.py
 Output(s): hmmsearch.out - the hmmersearch output file not formatted in the sto
 MimUGTs.sto - hmmserach output formatted into .sto file
 MimUGTIDsUniq.txt - IDs from the MimUGTIDs.txt that are unique and nonoverlapping
-MimUGTUniqFastaID.txt -  full fasta ID from the original mimulus genome annotation file
+MimUGTFastaID.txt -  full fasta ID from the original mimulus genome annotation file
 
 Name: GetHmmSearchHits.py
 Description: get the names of the mimulus genes that was a hit 
@@ -24,21 +24,16 @@ Name: parsePrimary.py
 Description: parses through the MimUGTIDs.txt to write fasta IDs refer only to primary annotations to the output file. 
 Input(s): MimUGTFastaID.txt
 Outputs(s): MimUGTPrimary.txt
-Notes: 
 
-GetFullSeqs.py
 Name: GetFullSeqs.py
 Description: Writes full sequences from mimulus genome to the output file given a list of full fasta IDs 
-Input: MimUGTPrimary.txt
+Input: MimUGTPrimary.txt, MguttatusStrp.fasta
 Output: Mim.UGT.v1.fasta 
 
 Name: RemoveWhiteSpc.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: MguttatusSeq.fasta
 Output: MguttatusStrp.fasta
-
-Name: expressedAnnot.txt
-Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes. Notes: (from heatmap) 
 
 ####################################
 # Curation 1 - PSPG completeness   #
@@ -95,3 +90,7 @@ outfile2 = "MimUGTPrimary2.txt"
 GetFullSeqs.py - NOTE: change input and output: 
 infile4 = "Mim.UGT.v3.format.fasta"
 outfile4 = "Mim.UGT.v4.fasta"
+
+Name: expressedAnnot.txt
+Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes. Notes: (from heatmap) 
+
