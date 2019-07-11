@@ -3,8 +3,6 @@
 
 
 # HMMsearch - Extract the UGTs from the Mimulus Protein Annotation Database 
-
-
 HMMsearch.sh - extracts the mimulus genes that are UGTs 
 Input(s):
 MguttatusSeq.fasta - genome of mimulus guttatus annotated genes
@@ -36,10 +34,7 @@ Description: Removes the whitespace and formats the file that contains the all m
 Input: MguttatusSeq.fasta
 Output: MguttatusStrp.fasta
 
-#############################################################################
-# Curation 1 - PSPG completeness                                            #
-#############################################################################
-
+# Curation 1 - PSPG completeness                                            
 Name: curatePspg.sh
 Description: curates sequences based on the PSPG conserved motif completeness
 Files: 
@@ -58,10 +53,7 @@ Description: reformats MimUGTs.sto so that it can be parsed for PSPG box complet
 Input: MimUGTs.sto
 Output: MimUGTsFmt.sto
  
-################################################
-# Curation 2 - sequence Size                   #
-################################################
-
+# Curation 2 - sequence Size                   
 Name: CurateSize.sh         
 Description: Curates Mim.UGT.V2.fasta based on length of sequence 
 Files: strpSeqs.py, GetSize.py
@@ -77,10 +69,7 @@ Name: GetSize.py
 -Output:  Mim.UGT.v3.fasta
 -comments: Upper bound was origanly 500 but was then increased to 550.   
 
-#####################################################
-# Curation3 -  Expressed Mimulus UGTs               #
-#####################################################
- 
+# Curation3 -  Expressed Mimulus UGTs               
 Name: curateExpressed.sh
 Description: curates Mim.UGT.v3 based on the mimulus gutattus UGTs that are expressed. 
 Input: expressedAnnot.txt
