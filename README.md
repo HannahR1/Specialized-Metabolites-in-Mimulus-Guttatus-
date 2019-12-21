@@ -53,10 +53,15 @@ Description: parses through the "PspgID.txt" to write fasta IDs refer only to pr
 Input(s): PspgID.txt
 Outputs(s): PspgIDPrimary.txt
 
-Name: formatPspg.py (automation step) 
-Description: reformats MimUGTs.sto so that it can be parsed for PSPG box completeness. ( getting rid of white space??) 
-Input: MimUGTs.sto  actuall -> HMMERPfamStock.sto
-Output: MimUGTsFmt.sto
+#Name: CheckSubset.py
+#Description: checks if the PSPGID.py ids are all contained in the Output: Mim.UGT.v1.fasta
+#Inputs:PspgIDPrimary.txt, MimUGTPrimary.txt
+#Output: Output printed to screen or saved into jobmanager execution file.
+
+##Name: formatPspg.py (automation step) 
+#Description: reformats MimUGTs.sto so that it can be parsed for PSPG box completeness. ( getting rid of white space??) 
+#Input: MimUGTs.sto  actuall -> HMMERPfamStock.sto
+#Output: MimUGTsFmt.sto
  
 # Curation 2 - sequence Size                   
 Name: CurateSize.sh         
