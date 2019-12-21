@@ -15,9 +15,6 @@ export PATH=$PATH:/$HOME/Documents/HMMER/hmmer-3.2.1/hmmer-3.2.1/src/
 #hmmsearch 
 hmmsearch -A MimUGTs.sto UDPGT.hmm MguttatusSeq.fasta > hmmsearch.out 
 
-#Need to preprocess hmm.search.out
-#insert file command here#
-
 python GetHmmSearchHits.py
 
 sort MimUGTIDs.txt | uniq >  MimUGTIDsUniq.txt
