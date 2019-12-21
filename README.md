@@ -48,6 +48,11 @@ Description: For annotations that have a full PSPG box,  writes the IDs to a new
 Input: MimUGTs.sto #### NEEDS TO BE CHANGED TO THE OUTPUT FROM formatPspg.py###
 Output: PspgID.txt, "fullPSPG.txt" 
 
+Name: parsePrimary2.py ****UPDATE********
+Description: parses through the MimUGTIDs.txt to write fasta IDs refer only to primary annotations to the output file. 
+Input(s):
+Outputs(s): 
+
 Name: formatPspg.py (automation step) 
 Description: reformats MimUGTs.sto so that it can be parsed for PSPG box completeness. ( getting rid of white space??) 
 Input: MimUGTs.sto  actuall -> HMMERPfamStock.sto
