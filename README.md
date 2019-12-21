@@ -10,7 +10,7 @@ UDPGT.hmm - hmm profile of UDPGTs from pfam
 Files: GetHmmSearchHits.py, parsePrimary.py, RemoveWhiteSpc.py, GetFullSeqs.py
 
 Output(s): hmmsearch.out - the hmmersearch output file not formatted in the sto
-MimUGTs.sto - hmmserach output formatted into .sto file
+MimUGTs.sto - hmmsearch output formatted into .sto file
 MimUGTIDsUniq.txt - IDs from the MimUGTIDs.txt that are unique and nonoverlapping
 MimUGTFastaID.txt -  full fasta ID from the original mimulus genome annotation file
 
