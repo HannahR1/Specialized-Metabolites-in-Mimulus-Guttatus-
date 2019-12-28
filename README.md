@@ -25,7 +25,12 @@ Outputs(s): MimUGTPrimary.txt
 Name: RemoveWhiteSpc.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: MguttatusSeq.fasta
-Output: MguttatusStrp.fasta - has the star at end
+Output: MguttatusStrp.fasta 
+
+Name: Format.py 
+Description: Adds a star after each sequence to fomrat the file. 
+Input: MguttatusStrp.fasta 
+Output: MguttatusFmt.fasta 
 
 Name: GetFullSeqs.py
 Description: Writes full sequences from mimulus genome to the output file given a list of full fasta IDs 
@@ -54,10 +59,15 @@ Inputs:PspgIDPrimary.txt, MimUGTPrimary.txt
 Output: Output printed to screen or saved into jobmanager execution file.
 "The sequences identitfied to encode a PSPG box in  PspgID.txt is a subset of genes that are UGTs from MimUGTPrimary.txt." 
 
-Name: RemoveWhiteSpc.py
+Name: RemoveWhiteSpc2.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: Mim.UGT.v1.fasta 
-Output: Mim.UGT.v1strp.fasta 
+Output: Mim.UGT.v1Strp.fasta 
+
+Name: Format2.py 
+Description: Adds a star after each sequence to fomrat the file. 
+Input:  Mim.UGT.v1strp.fasta 
+Output: Mim.UGT.v1Fmt.fasta 
 
 Name: GetFullSeqsPSPG.py *update name* 
 Description: Writes full sequences from "PspgID.txt" to "Mim.UGT.v2.fasta" which are the sequences that encode a full PSPG box. 
@@ -69,12 +79,13 @@ Name: CurateSize.sh
 Description: Curates Mim.UGT.V2.fasta based on length of sequence 
 Files: strpSeqs.py, GetSize.py
  
-Name: strpSeqs.py
-Description: removes the white space from the sequences 
-Input:  Mim.UGT.v2.fasta
+Name: strpSeqs.py  * RemoveWhiteSpace --take out 
+Name: RemoveWhiteSpc3.py
+Description: Removes the white space from the sequences 
+Input: Mim.UGT.v2.fasta
 Output: Mim.UGT.v2.Strp.fasta
 
-Name: GetFullSeqSize.py *update name* 
+Name: GetFullSeqSize.py *update name(in putty)* 
 Description:  For annotations that fall within this threshold between 200 and 550 amino acids long, it writes the sequence to a new file
 Input: Mim.UGT.v2.Strp.fasta
 Output:  Mim.UGT.v3.fasta
@@ -96,6 +107,17 @@ Notes: (from heatmap)
 Name: expressedAnnotuniq.txt 
 Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes that are unique. 
 
+Name: RemoveWhiteSpc4.py
+Description: Removes the white space from the sequences 
+Input: 
+Output: 
+
+
+
+Name: Format2.py 
+Description: Adds a star after each sequence to fomrat the file. 
+Input:  
+Output: 
 
 
 parsePrimary.py - NOTE:change input and output: 
