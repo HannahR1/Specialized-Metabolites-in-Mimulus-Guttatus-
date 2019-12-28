@@ -78,7 +78,9 @@ Name: GetFullSeqSize.py *update name*
 Description:  For annotations that fall within this threshold between 200 and 550 amino acids long, it writes the sequence to a new file
 Input: Mim.UGT.v2.Strp.fasta
 Output:  Mim.UGT.v3.fasta
-comments: Upper bound was origanly 500 but was then increased to 550.   
+comments: Upper bound was origanly 500 but was then increased to 550.  
+
+#need something that gets the ids of the new subset 
 
 # Curation3 -  Expressed Mimulus UGTs               
 Name: curateExpressed.sh
@@ -90,6 +92,11 @@ Files: expressedAnnot.txt, parsePrimary.py, GetFullSeqsExpsd.py
 Name: expressedAnnot.txt
 Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes. 
 Notes: (from heatmap)
+
+Name: expressedAnnotuniq.txt 
+Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes that are unique. 
+
+
 
 parsePrimary.py - NOTE:change input and output: 
 Infile2 = MimUGTExpFastaIDuniq.txt
