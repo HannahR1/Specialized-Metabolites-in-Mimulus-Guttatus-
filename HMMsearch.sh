@@ -26,4 +26,6 @@ python parsePrimary.py
 #remove white space from the Raw Mimulus Annotations 
 python RemoveWhiteSpc.py
 
+python Format.py 
+
 python GetFullSeqs.py
