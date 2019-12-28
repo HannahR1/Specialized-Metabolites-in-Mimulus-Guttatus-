@@ -25,7 +25,7 @@ Outputs(s): MimUGTPrimary.txt
 Name: RemoveWhiteSpc.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: MguttatusSeq.fasta
-Output: MguttatusStrp.fasta
+Output: MguttatusStrp.fasta - has the star at end
 
 Name: GetFullSeqs.py
 Description: Writes full sequences from mimulus genome to the output file given a list of full fasta IDs 
