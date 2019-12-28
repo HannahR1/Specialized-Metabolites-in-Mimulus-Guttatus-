@@ -13,6 +13,8 @@ python parsePrimary2.py
 #check that this is a subset of the initial HMMER hits 
 checkSubset.py
 
+#remove fullseqs??
+
 #Get full sequences that have a full PSPG box
 #NOTE: change the input and output: 
 #infile2 = "PspgID.txt"
