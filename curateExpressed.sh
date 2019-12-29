@@ -14,7 +14,9 @@ fgrep -f expressedAnnotuniq.txt MguttatusSeq.fasta > MimUGTExpFastaID.txt
 #outfile2 = "MimUGTPrimary2.txt"
 python parsePrimary.py
 
-#NOTE:change input and output
-#infile4 = "Mim.UGT.v3.format.fasta"
-#outfile4 = "Mim.UGT.v4.fasta"
-python GetFullSeqs.py
+python RemoveWhiteSpc4.py
+
+python Format4.py
+
+
+python GetFullSeqs.py --> new name GetFullSeqsExpsd.py
