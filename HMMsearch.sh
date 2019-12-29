@@ -29,3 +29,29 @@ python RemoveWhiteSpc.py
 python Format.py 
 
 python GetFullSeqs.py
+
+
+#####new commands#######
+export PATH=$PATH:/$HOME/Documents/HMMER/hmmer-3.2.1/hmmer-3.2.1/src/
+
+python GetHmmSearchHits2.py
+
+sort MimUGTIDs.txt | uniq >  MimUGTIDsUniq.txt
+
+fgrep -f MimUGTIDsUniq.txt MguttatusSeq.fasta > MimUGTFastaID.txt
+
+python parsePrimary.py
+
+python RemoveWhiteSpc1.py
+
+python Format1.py
+
+Mim.UGT.v1.fasta 
+
+
+
+
+
+
+
+
