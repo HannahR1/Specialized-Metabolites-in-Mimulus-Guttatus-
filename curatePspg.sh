@@ -13,12 +13,10 @@ python parsePrimary2.py
 #check that this is a subset of the initial HMMER hits 
 checkSubset.py
 
-#remove fullseqs??
+python RemoveWhiteSpc2.py
 
-#Get full sequences that have a full PSPG box
-#NOTE: change the input and output: 
-#infile2 = "PspgID.txt"
-#outfile2= "Mim.UGT.v3"
+python Format2.py
+
 python GetFullSeqs.py
 
 
