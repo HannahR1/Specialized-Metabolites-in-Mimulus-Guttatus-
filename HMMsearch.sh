@@ -34,6 +34,8 @@ python GetFullSeqs.py
 #####new commands#######
 export PATH=$PATH:/$HOME/Documents/HMMER/hmmer-3.2.1/hmmer-3.2.1/src/
 
+hmmsearch -A MimUGTs.sto UDPGT.hmm MguttatusSeq.fasta > hmmsearch.out 
+
 python GetHmmSearchHits2.py
 
 sort MimUGTIDs.txt | uniq >  MimUGTIDsUniq.txt
@@ -46,7 +48,7 @@ python RemoveWhiteSpc1.py
 
 python Format1.py
 
-Mim.UGT.v1.fasta 
+python GetFullSeqs.py
 
 
 
