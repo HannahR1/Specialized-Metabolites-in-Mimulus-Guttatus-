@@ -11,13 +11,18 @@ python pspgBox.py
 python parsePrimary2.py
 
 #check that this is a subset of the initial HMMER hits 
-checkSubset.py
+checkSubset.py #dont need 
 
 python RemoveWhiteSpc2.py
 
 python Format2.py
 
 python GetFullSeqs.py
+
+
+####new commands####
+
+
 
 
 
