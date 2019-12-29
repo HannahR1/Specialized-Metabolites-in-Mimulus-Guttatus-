@@ -7,12 +7,12 @@ Input(s):
 MguttatusSeq.fasta - genome of mimulus guttatus annotated genes
 UDPGT.hmm - hmm profile of UDPGTs from pfam 
 Files: GetHmmSearchHits.py, parsePrimary.py, RemoveWhiteSpc.py, GetFullSeqs.py
-Outputs: hmmsearch.out - the hmmersearch output file not formatted in the sto
+Outputs: hmmsearch.out - the hmmSearch output file not formatted in the sto
 MimUGTs.sto - hmmsearch output formatted into .sto file
 MimUGTIDsUniq.txt - IDs from the MimUGTIDs.txt that are unique and nonoverlapping
 MimUGTFastaID.txt -  full fasta ID from the original mimulus genome annotation file
 
-Name: GetHmmSearchHits.py
+Name: GetHmmSearchHits2.py
 Description: Get the names of the mimulus genes that was a hit 
 Input: MimUGTs.sto
 Output: MimUGTIDs.txt
@@ -22,19 +22,19 @@ Description: parses through the MimUGTIDs.txt to write fasta IDs refer only to p
 Input(s): MimUGTFastaID.txt
 Outputs(s): MimUGTPrimary.txt
 
-Name: RemoveWhiteSpc.py
+Name: RemoveWhiteSpc1.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: MguttatusSeq.fasta
 Output: MguttatusStrp.fasta 
 
-Name: Format.py 
+Name: Format1.py 
 Description: Adds a star after each sequence to fomrat the file. 
 Input: MguttatusStrp.fasta 
 Output: MguttatusFmt.fasta 
 
 Name: GetFullSeqs.py
 Description: Writes full sequences from mimulus genome to the output file given a list of full fasta IDs 
-Input: MimUGTPrimary.txt, MguttatusStrp.fasta
+Input: MimUGTPrimary.txt, MguttatusFmt.fasta
 Output: Mim.UGT.v1.fasta 
 
 # Curation 1 - Curate for PSPG completeness                                            
@@ -125,7 +125,7 @@ Name: parsePrimary3.py
 Infile2 = MimUGTExpFastaIDuniq.txt
 Outfile2 = MimUGTPrimary2.txt
 
-GetFullSeqsExpsd.py - NOTE: 
+Name: GetFullSeqsExpsd.py
 infile4 =  MimUGTPrimary2.txt  Mim.UGT.v3.Fmt.fasta      not: Mim.UGT.v3.format.fasta, 
 outfile4 = Mim.UGT.v4.fasta
 
