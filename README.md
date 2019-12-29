@@ -45,7 +45,7 @@ pspgBox.py, parsePrimary2.py,RemoveWhiteSpc.py, GetFullSeqsPSPG.py
 
 Name: pspgBox.py
 Description: For annotations that have a full PSPG box,  writes the IDs to a new file.
-Input: MimUGTs.sto #### NEEDS TO BE CHANGED TO THE OUTPUT FROM formatPspg.py###
+Input: MimUGTs.sto 
 Output: PspgID.txt, "fullPSPG.txt" 
 
 Name: parsePrimary2.py 
