@@ -35,12 +35,14 @@ python GetFullSeqs.py
 export PATH=$PATH:/$HOME/Documents/HMMER/hmmer-3.2.1/hmmer-3.2.1/src/
 
 hmmsearch -A MimUGTs.sto UDPGT.hmm MguttatusSeq.fasta > hmmsearch.out 
+#edit for primaty sequences:  hmmsearch -A MimUGTs.sto UDPGT.hmm Mguttatus_256_v2.0.protein_primaryTranscriptOnly.fasta > hmmsearch.out 
 
 python GetHmmSearchHits2.py
 
 sort MimUGTIDs.txt | uniq >  MimUGTIDsUniq.txt
 
 fgrep -f MimUGTIDsUniq.txt MguttatusSeq.fasta > MimUGTFastaID.txt
+# fgrep -f MimUGTIDsUniq.txt Mguttatus_256_v2.0.protein_primaryTranscriptOnly.fasta > MimUGTFastaID.txt
 
 python parsePrimary.py
 
