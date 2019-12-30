@@ -21,6 +21,11 @@ python GetFullSeqs.py
 
 
 ####new commands####
+python pspgBox.py
+sort "PspgID.txt" | uniq > "PspgIDUniq.txt"
+python parsePrimary2.py
+
+
 
 
 
