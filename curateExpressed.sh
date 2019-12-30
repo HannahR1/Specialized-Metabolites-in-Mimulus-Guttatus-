@@ -20,3 +20,13 @@ python Format4.py
 
 
 python GetFullSeqs.py --> new name GetFullSeqsExpsd.py
+
+
+###new commands###
+sort expressedAnnot.txt | uniq >  expressedAnnotuniq.txt
+fgrep -f expressedAnnotuniq.txt MguttatusSeq.fasta > MimUGTExpFastaID.txt
+
+python parsePrimary3.py
+python RemoveWhiteSpc4.py
+python Format4.py
+python GetFullSeqsExpsd.py
