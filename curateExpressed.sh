@@ -25,6 +25,7 @@ python GetFullSeqs.py --> new name GetFullSeqsExpsd.py
 ###new commands###
 sort expressedAnnot.txt | uniq >  expressedAnnotuniq.txt
 fgrep -f expressedAnnotuniq.txt MguttatusSeq.fasta > MimUGTExpFastaID.txt
+# fgrep -f expressedAnnotuniq.txt Mguttatus_256_v2.0.protein_primaryTranscriptOnly.fasta > MimUGTExpFastaID.txt 
 
 python parsePrimary3.py
 python RemoveWhiteSpc4.py
