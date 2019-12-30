@@ -50,7 +50,7 @@ Output: PspgID.txt, "fullPSPG.txt"
 
 Name: parsePrimary2.py 
 Description: Parses through the "PspgID.txt" to write fasta IDs that refer only to primary annotations to the output file. 
-Input: PspgID.txt
+Input: PspgIDUniq.txt
 Outputs: PspgIDPrim.txt
 
 ########take out Name: CheckSubset.py
