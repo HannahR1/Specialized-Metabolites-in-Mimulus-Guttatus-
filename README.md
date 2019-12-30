@@ -51,7 +51,7 @@ Output: PspgID.txt, "fullPSPG.txt"
 Name: parsePrimary2.py 
 Description: Parses through the "PspgID.txt" to write fasta IDs that refer only to primary annotations to the output file. 
 Input: PspgID.txt
-Outputs: PspgIDPrimary.txt
+Outputs: PspgIDPrim.txt
 
 ########take out Name: CheckSubset.py
 Description: checks if the PSPGID.py ids are all contained in the Output: Mim.UGT.v1.fasta
@@ -71,8 +71,8 @@ Output: Mim.UGT.v1Fmt.fasta
 
 Name: GetFullSeqsPSPG.py *update name* 
 Description: Writes full sequences from "PspgID.txt" to "Mim.UGT.v2.fasta" which are the sequences that encode a full PSPG box. 
-Input: infile2 = PspgID.txt, Mim.UGT.v1Fmt.fasta 
-Output: outfile2= Mim.UGT.v2.fasta
+Input: infile2 = PspgIDPrim.txt, Mim.UGT.v1Fmt.fasta 
+Output: Mim.UGT.v2.fasta
  
 # Curation 2 - Curate for sequence Size                   
 Name: CurateSize.sh         
@@ -111,6 +111,10 @@ Notes: (from heatmap)
 Name: expressedAnnotuniq.txt 
 Description: contains the IDs of the Mimulus UGT annotations that are associated with expressed genes that are unique. 
 
+Name: parsePrimary3.py
+Infile2 = MimUGTExpFastaID.txt
+Outfile2 = MimUGTPrimary2.txt
+
 Name: RemoveWhiteSpc4.py
 Description: Removes the white space from the sequences 
 Input: Mim.UGT.v3.fasta
@@ -120,10 +124,6 @@ Name: Format4.py
 Description: Adds a star after each sequence to fomrat the file. 
 Input:  Mim.UGT.v3.Strp.fasta 
 Output: Mim.UGT.v3.Fmt.fasta 
-
-Name: parsePrimary3.py
-Infile2 = MimUGTExpFastaIDuniq.txt
-Outfile2 = MimUGTPrimary2.txt
 
 Name: GetFullSeqsExpsd.py
 infile4 =  MimUGTPrimary2.txt  Mim.UGT.v3.Fmt.fasta      not: Mim.UGT.v3.format.fasta, 
