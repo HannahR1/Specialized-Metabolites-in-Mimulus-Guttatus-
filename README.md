@@ -15,7 +15,7 @@ MimUGTFastaID.txt -  full fasta ID from the original mimulus genome annotation f
 Name: GetHmmSearchHits2.py
 Description: Get the names of the mimulus genes that was a hit 
 Input: MimUGTs.sto
-Output: MimUGTIDs.txt
+Output:  MimUGTIDs.txt
 
 Name: parsePrimary.py
 Description: parses through the MimUGTIDs.txt to write fasta IDs refer only to primary annotations to the output file. 
@@ -25,7 +25,7 @@ Outputs(s): MimUGTPrimary.txt
 Name: RemoveWhiteSpc1.py
 Description: Removes the whitespace and formats the file that contains the all mimulus protein annotation sequences. 
 Input: MguttatusSeq.fasta
-Output: MguttatusStrp.fasta 
+Output:  MguttatusStrp.fasta 
 
 Name: Format1.py 
 Description: Adds a star after each sequence to fomrat the file. 
