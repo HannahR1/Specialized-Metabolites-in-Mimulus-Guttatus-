@@ -133,15 +133,22 @@ outfile4 = Mim.UGT.v4.fasta
 #Prodcues a FastQ phlogenetic tree for each curation step. 
 # Curation 1 PSPG completeness Phylogenetic Tree 
 Name: tree1.sh
-Input: 
-Output: 
+Input: fastreeQ1New.fast
+Output:  fasttreeQ1TNew
+
 
 # Curation 2 Sequence Size Phylogenetic Tree   
 Name: tree2.sh
+Input: tree2.fasta
+Output: tree2.nex
+
 
 
 # Curation3 Expressed Mimulus UGTs Phylogenetic Tree                 
 Name: tree3.sh
+Input: tree3.fasta
+Output: tree3.nex
+
 
 
 
